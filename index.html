@@ -16,7 +16,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="img/NewMUN-Logo.png" type="image/x-icon"> <!--favicon-->
+    <link rel="shortcut icon" href="img/NewMUN-logo-new_trans.png" type="image/x-icon"> <!--favicon-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -186,34 +186,34 @@
       </div>
       <span style="margin-top: 30vh; opacity: 0" id="what"> </span>
     </div>
-    <div class="bg-white my-2 text-center container p-5">
+    <!-- <div class="bg-white my-2 text-center container p-5">
       <div class="card-group">
         <div class="card hiddenSlideIn">
           <div class="card-body">
-            <div class="card-title countup display-5 responsive-title fw-bold">134</div>
+            <div class="card-title countup display-5 responsive-title fw-bold">200</div>
             <div class="card-text fs-5">Delegates</div>
           </div>
         </div>
         <div class="card hiddenSlideIn">
           <div class="card-body">
-            <div class="card-title countup display-5 responsive-title fw-bold">15</div>
+            <div class="card-title countup display-5 responsive-title fw-bold">13</div>
             <div class="card-text fs-5">Chairs</div>
           </div>
         </div>
         <div class="card hiddenSlideIn">
           <div class="card-body">
-            <div class="card-title countup display-5 responsive-title fw-bold">2256</div>
+            <div class="card-title countup display-5 responsive-title fw-bold">4248</div>
             <div class="card-text fs-5">Hours Of Hardwork</div>
           </div>
         </div>
         <div class="card hiddenSlideIn">
           <div class="card-body">
-            <div class="card-title countup display-5 responsive-title fw-bold">22</div>
+            <div class="card-title countup display-5 responsive-title fw-bold">48</div>
             <div class="card-text fs-5 text-capitalize">Hours of fruitful discussion</div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="bg-white my-2">
       <div class="p-5 text-center">
         <h2 class="text-white text-primary display-3">What is NewMUN?</h2>
@@ -291,22 +291,21 @@
       style="box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.2)"
     >
       <div>
-        <h2 class="display-4">General resources</h2>
+        <h2 class="display-4"><abbr title="Coming soon...">General resources*</abbr></h2>
         <div>
           <a
-            href="/pdf/Itinerary.pdf"
+            href="#"
             role="button"
-            class="btn-primary btn-lg d-none d-lg-inline-block btn"
-            style="margin-top: 2%"
+            class="btn-primary btn-lg d-none d-lg-inline-block btn disabled"
+            style="margin-top: 2%" disabled
           >
             Itinerary
           </a>
           <a
-            href="/img/NewMUN-Logo.png"
-            download
+            href="#"
             role="button"
-            class="btn-primary btn-lg d-none d-lg-inline-block btn"
-            style="margin-top: 2%"
+            class="btn-primary btn-lg d-none d-lg-inline-block btn disabled"
+            style="margin-top: 2%" disabled
           >
             Download NewMUN Logos for Position Papers
           </a>
@@ -379,26 +378,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">Lok Sabha</h6>
                     <p class="card-text">For Juniors</p>
-                    <a
-                      href="/pdf/Lok_Sabha_Juniors_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#LSJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">Lok Sabha</h6>
                     <p class="card-text">For Juniors</p>
-                    <a
-                      href="/pdf/Lok_Sabha_Juniors_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#LSJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -412,7 +413,7 @@
               <div class="row g-0">
                 <div class="col-lg-4">
                   <img
-                    src="/img/council-logos/HCC.png" alt="Historical Crisis Committee"
+                    src="/img/NewMUN-logo-new_trans_resize.png" alt="Historical Crisis Committee"
                     class="img-fluid p-3"
                   />
                 </div>
@@ -420,26 +421,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">HCC</h6>
                     <p class="card-text">Historical Crisis Committee</p>
-                    <a
-                      href="/pdf/HCC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#HCCJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">HCC</h6>
                     <p class="card-text">Historical Crisis Committee</p>
-                    <a
-                      href="/pdf/HCC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#HCCJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -463,13 +466,14 @@
                     <p class="card-text">
                       United Nations Economic and Social Council
                     </p>
-                    <a
-                      href="/pdf/ECOSOC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#ECOSOCJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
@@ -478,13 +482,14 @@
                     <p class="card-text">
                       United Nations Economic and Social Council
                     </p>
-                    <a
-                      href="/pdf/ECOSOC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#ECOSOCJuniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -508,26 +513,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">Lok Sabha</h6>
                     <p class="card-text">Seniors</p>
-                    <a
-                      href="/pdf/Lok_Sabha_Seniors_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#LSSeniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">Lok Sabha</h6>
                     <p class="card-text">Seniors</p>
-                    <a
-                      href="/pdf/Lok_Sabha_Seniors_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#LSSeniorsAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -546,26 +553,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">UNSC</h6>
                     <p class="card-text">United Nations Security Council</p>
-                    <a
+                    <button
                       type="button"
-                      href="/pdf/UNSC_Background_Guide.pdf"
-                      class="btn btn-primary "
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNSCAgenda"
                     >
-                      Background Guide
-                  </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">UNSC</h6>
                     <p class="card-text">United Nations Security Council</p>
-                    <a
-                      href="/pdf/UNSC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary "
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNSCsAgenda"
                     >
-                      Background Guide
-                  </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -584,26 +593,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">UNODC</h6>
                     <p class="card-text">United Nations Office on Drugs and Crime</p>
-                    <a
-                      href="/pdf/UNODC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNODCAgenda"
                     >
-                      Background Guide
-                  </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">UNODC</h6>
                     <p class="card-text">United Nations Office on Drugs and Crime</p>
-                    <a
-                      href="/pdf/UNODC_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNODCAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -622,26 +633,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">WHO</h6>
                     <p class="card-text">World Health Organization</p>
-                    <a
-                      href="/pdf/WHO_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#WHOAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">WHO</h6>
                     <p class="card-text">World Health Organization</p>
-                    <a
-                      href="/pdf/WHO_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#WHOAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -660,26 +673,28 @@
                   <div class="card-body text-start">
                     <h6 class="card-title fw-normal display-6">UNCSW</h6>
                     <p class="card-text">United Nations Commission on the Status of Women</p>
-                    <a
-                      href="/pdf/UNCSW_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNCSWAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
                 <div class="col-lg-8 d-lg-none">
                   <div class="card-body">
                     <h6 class="card-title fw-normal display-6">UNCSW</h6>
                     <p class="card-text">United Nations Commission on the Status of Women</p>
-                    <a
-                      href="/pdf/UNCSW_Background_Guide.pdf"
+                    <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-primary disabled"
+                      data-bs-toggle="modal"
+                      data-bs-target="#UNCSWAgenda"
                     >
-                      Background Guide
-                    </a>
+                      Agenda
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1152,6 +1167,275 @@
           This website is licensed under the GNU GPL Version 3. License information can be seen <a href="http://newmun.athiban-sharon.com/LICENSE">at LICENSE</a>. Though the license states that you do not need to attribute the original author of this website, it would be nice if you do. You can contact me using <a href="mailto:athibansworkmail@gmail.com">mail</a> or personally on <a href="www.instagram.com/athiban.sharon">Instagram</a>. Acknowledgment to Srevin for starting the NewMUN website idea. Check the sites source code <a href="https://github.com/athshh/newmun_main">on GitHub</a>. Thank you for viewing my website! <br><span><i>- Athiban Sharon</i></span>
     </div>
   </body>
+  <div
+    class="modal fade"
+    id="LSJuniorsAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="Lok Sabha (Juniors)"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="Lok Sabha (Juniors)">
+            Lok Sabha (Juniors)
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>One nation one election</li>
+            <li>Bharat name change</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="HCCJuniorsAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="Historical Crisis Committee (Juniors)"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="Historical Crisis Committee (Juniors)">
+            Historical Crisis Committee (Juniors)
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Quit India movement amidst WWII</li>
+            <li>The Bengal Famine</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="ECOSOCJuniorsAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="United Nations Economic and Social Council (Juniors)"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="United Nations Economic and Social Council (Juniors)">
+            United Nations Economic and Social Council (Juniors)
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>The impact of climate change on the economy</li>
+            <li>Ethics of Artificial Intelligence</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="LSSeniorsAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="Lok Sabha"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="Lok Sabha">
+            Lok Sabha
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>42nd Amendment</li>
+            <li>Criminal Defamation</li>
+            <li>Uniform Civil Code</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="UNSCAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="United Nations Security Council"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="United Nations Security Council">
+            United Nations Security Council
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Wagner Group</li>
+            <li>Cybersecurity</li>
+            <li>Maritime Security</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="UNODCAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="United Nations Office on Drugs and Crime"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="United Nations Office on Drugs and Crime">
+            United Nations Office on Drugs and Crime
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Trafficking of Opium from Afghanistan under the Taliban regime</li>
+            <li>Reforms to the criminal justice and prison systems</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="UNCSWAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="United Nations Commission on the Status of Women"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="United Nations Commission on the Status of Women">
+            United Nations Commission on the Status of Women
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Domestic Violence and Assault within marriage</li>
+            <li>Economic Participation of women and the gender pay gap</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="WHOAgenda"
+    data-bs-backdrop="static"
+    data-bs-keyboard="true"
+    tabindex="-1"
+    aria-labelledby="World Health Organization"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title" id="World Health Organization">
+            World Health Organization
+          </h5>
+          <span
+            aria-hidden="true"
+            role="button"
+            class="close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <ol>
+            <li>Euthanasia and Medically Assisted dying</li>
+            <li>Tobacco Control</li>
+            <li>Recognition of Mental Health and psychological illnesses</li>
+            <li>Pharmaceutical Patent Abuse</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    
+  </div>
   <div class="modal fade" id="shahid" tabindex="-1" aria-labelledby="shahid" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-centered-scrollable">
     <div class="modal-content">

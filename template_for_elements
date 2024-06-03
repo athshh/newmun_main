@@ -1,0 +1,211 @@
+paste lines 3 through 24 in the head element of html files
+
+<!-- Latest compiled and minified CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet"
+/>
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Animate.css -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<!-- Athibans custom random specific instances css-->
+<link rel="stylesheet" href="/css/style.css" />
+<!--Athibans custom random specific instances js-->
+<script defer src="/js/app.js"></script>
+
+navbar paste lines 28 through 111 as is in between head and body
+
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-light bg-light custom-navbar"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand px-lg-5" href="#"
+      ><img
+        src="/img/logo.png"
+        alt="NewMUN logo"
+        width="25%"
+        height="25%"
+      /><span
+        style="
+          padding-left: 5%;
+          color: #003165;
+          font-family: 'Montserrat', sans-serif;
+        "
+        >NewMUN</span
+      >
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarID"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarID">
+      <div class="container-fluid">
+        <style>
+          @media screen and (max-width: 992px) {
+            .nav-item {
+              align-self: center;
+            }
+          }
+        </style>
+        <ul
+          class="navbar-nav flex-navbar flex-lg-row-reverse flex-none-column-reverse"
+          style="font-family: 'Montserrat'"
+        >
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Pictures</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">Team</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link btn dropdown-toggle"
+              aria-current="page"
+              href="/index.html/#resources"
+              style="font-weight: 400"
+              role="button"
+              data-bs-toggle="dropdown"
+              >Resources</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/index.html/#resources-general" class="dropdown-item"
+                  >General resources</a
+                >
+              </li>
+              <li>
+                <a href="/index.html/#resources-council" class="dropdown-item"
+                  >Council resources</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/index.html/#why"
+              >Why NewMUN?</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/index.html/#what"
+              >What is NewMUN?</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+do a 30vh top margin on the body tag to count for the space coverage by the
+navbar make id attributes one element before the start of the section to count
+for space coverage by navbar team member cards with modals
+
+<div class="col archive-team-card px-5">
+  <div class="card">
+    <img src="/img/C4-OC/abiya.jpg" alt="Soumi Teacher" class="card-img-top" />
+    <!--change src to image, alt to name-->
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <!--enter name-->
+      <p class="card-text fst-italic"></p>
+      <!--enter designation-->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#abiyaC4Modal"
+      >
+        <!--data-bs needs to be replaced by respective target-->
+        About me!
+      </button>
+      <div
+        class="modal fade"
+        id="abiyaC4Modal"
+        data-backdrop="static"
+        data-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="abiyaC4Modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="abiyaC4ModalLabel"></h5>
+              <!--enter name, id needs to be replaced with respective id-->
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" style="text-align: justify"></div>
+            <!--enter description-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col archive-team-card px-5">
+  <div class="card">
+    <img src="/img/C3-OC/abiya.jpg" alt="Soumi Teacher" class="card-img-top" />
+    <!--change src to image, alt to name-->
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <!--enter name-->
+      <p class="card-text fst-italic"></p>
+      <!--enter designation-->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#abiyaC3Modal"
+      >
+        <!--data-bs needs to be replaced by respective target-->
+        About me!
+      </button>
+      <div
+        class="modal fade"
+        id="abiyaC3Modal"
+        data-backdrop="static"
+        data-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="abiyaC3Modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="abiyaC3ModalLabel"></h5>
+              <!--enter name, id needs to be replaced with respective id-->
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" style="text-align: justify"></div>
+            <!--enter description-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
