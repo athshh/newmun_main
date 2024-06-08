@@ -269,3 +269,37 @@
   text-align: justify;
   font-size: large;
 }
+
+.carousel {
+  z-index: -99;
+} /* keeps this behind all content */
+.carousel .item {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.carousel .one {
+  background: url(/img/archive_photos/ApplicationFrameHost_arpK8UBMpi.png);
+  background-size: cover;
+  -moz-background-size: cover;
+}
+.carousel .two {
+  background: url(/img/archive_photos/ApplicationFrameHost_oBKzAWZg2e.jpg);
+  background-size: cover;
+  -moz-background-size: cover;
+}
+.carousel .three {
+  background: url(/img/archive_photos/DSC_0177.JPG);
+  background-size: cover;
+  -moz-background-size: cover;
+}
+.carousel .active.left {
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
