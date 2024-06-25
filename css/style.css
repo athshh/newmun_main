@@ -303,3 +303,34 @@
   opacity: 0;
   z-index: 2;
 }
+
+.carcontainer {
+  position: relative;
+}
+
+.carcenter {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.carimg {
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+}
+
+#carouselContainer {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}

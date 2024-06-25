@@ -40,18 +40,9 @@
     <script defer src="js/app.js"></script>
   </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RTMW4X9FFQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RTMW4X9FFQ');
-</script>
 
   <nav
-    class="navbar navbar-expand-lg fixed-top navbar-light bg-light custom-navbar"
+    class="navbar navbar-expand-lg fixed-top navbar-light bg-light custom-navbar" id="navbarfull"
   >
     <div class="container-fluid">
       <a class="navbar-brand px-lg-5" href="#"
@@ -154,38 +145,25 @@
     </div>
   </nav>
   <body>
-    <div
-      class="bg-image container-fluid text-center text-white d-flex align-items-center flex-column"
-      fetchpriority="high"
-      style="
-        background-image: url(img/jumbotron.webp);
-        height: 90vh;
-        background-size: cover;
-        margin-top: 80px;
-        @media screen and (max-width: 576px) {
-          height: 50%;
-        }
-      "
-    >
-    <div style="margin-top: 30vh">
-      <h1
-        class="display-2  animate__animated animate__fadeInUp"
-        
-      >
-        This is
-        <span><abbr title="New Indian School Model United Nations">NewMUN.</abbr></span>
-      </h1>
-
-      <div
-        class="container display-6 animate__animated animate__fadeInUp animate__delay-1s"
-      >
-        Explore NewMUN and discover new platforms
+    <div id="carouselContainer" class="carousel-container">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/jumbotron.webp" class="d-block w-100" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/blue_abstract_lines_2.jpg" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/archive_photos/DSC_0177.JPG" class="d-block w-100" alt="Image 3">
+          </div>
+        </div>
       </div>
-      <div class="container display-6 animate__animated animate__fadeInUp animate__delay-1s fs-4 p-3" style="font-style: italic;" id="countdown">
-      </div>
+      <div class="text-overlay">
+    <h1 class="display-2  animate__animated animate__fadeInUp">This is NewMUN.</h1>
+    <h1 class="container display-6 animate__animated animate__fadeInUp animate__delay-1s">Explore NewMUN & discover new platforms</h1>
+  </div>
     </div>
-    <span style="margin-top: 30vh; opacity: 0" id="what"> </span>
-  </div> 
     <!-- <div class="bg-white my-2 text-center container p-5">
       <div class="card-group">
         <div class="card hiddenSlideIn">
@@ -214,7 +192,7 @@
         </div>
       </div>
     </div> -->
-    <div class="bg-white my-2">
+    <div class="bg-white my-2" id="what-is-newmun">
       <div class="p-5 text-center">
         <h2 class="text-white text-primary display-3">What is NewMUN?</h2>
         <p
@@ -832,265 +810,96 @@
     <!--TEAM SECTION-->
     <!---->
     <!---->
-    <!--<div class="text-center text-black container">
-      <h2 class="display-3 text-primary team-title">Team</h2>
-      <div
-        class="row row-cols-1 row-cols-lg-2 g-4 justify-content-center hiddenPopIn"
-      >
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Soumi.webp"
-                alt="soumi mondal"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Soumi Mondal</h5>
-                <p class="card-text">
-                  MUN Director
-                </p>
-                <button type="button" class="disabled btn btn-primary">About me.</button>
-              </div>
-            </div>
+    <div class="container-fluid" >
+      <h3 class="display-3 text-center text-primary">Meet the Team!</h3>
+      <br>
+      <br>
+      <div class="container bg-secondary" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 10px;">
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          <div class="col-lg-4">
+            <img src="img/C6-OC/Soumi X Alaina.jpg" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          </div>
+          <div class="col-lg-8 my-5">
+            <h6 class="display-6 text-primary">Ms. Soumi & Alaina</h6>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Shahid.webp"
-                alt="shahid"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Shahid</h5>
-                <p class="card-text">
-                  Secretary General
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shahid">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          
+          <div class="col-lg-8 my-5  order-1">
+            <h6 class="display-6 text-primary text-end">Irfaan & Hiba</h6>
+<div class="text-end">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.</div>
+          </div>
+          <div class="col-lg-4 order-lg-1 ">
+            <img src="img/C6-OC/Irfaan X Hiba.jpg" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Alaina.webp"
-                alt="alaina rejan varghese"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Alaina R. Varghese</h5>
-                <p class="card-text">
-                  Deputy Secretary General
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alaina">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          <div class="col-lg-4">
+            <img src="img/C6-OC/Devna X Vaani.png" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          </div>
+          <div class="col-lg-8 my-5">
+            <h6 class="display-6 text-primary">Devna & Vaani</h6>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Sereena.webp"
-                alt="Serena"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Serena</h5>
-                <p class="card-text">
-                  Head of Finance
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serena">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          
+          <div class="col-lg-8 my-5  order-1">
+            <h6 class="display-6 text-primary text-end">Emil & Brenden</h6>
+<div class="text-end">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.</div>
+          </div>
+          <div class="col-lg-4 order-lg-1 ">
+            <img src="img/C6-OC/Emil X Brenden.jpg" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Dona.webp"
-                alt="Dona"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Dona</h5>
-                <p class="card-text">
-                  Head of Security
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dona">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          <div class="col-lg-4">
+            <img src="img/C6-OC/Lakshaya X Fidel.png" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          </div>
+          <div class="col-lg-8 my-5">
+            <h6 class="display-6 text-primary">Lakshya & Fidel</h6>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.
           </div>
         </div>
-        
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Athiban.webp"
-                alt="Athiban Sharon"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Athiban Sharon</h5>
-                <p class="card-text">
-                  Head of IT
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#athiban">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          
+          <div class="col-lg-8 my-5  order-1">
+            <h6 class="display-6 text-primary text-end">Serena & Alfia</h6>
+<div class="text-end">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.</div>
+          </div>
+          <div class="col-lg-4 order-lg-1 ">
+            <img src="img/C6-OC/Serena X Alfia.jpg" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Daniel.webp"
-                alt="Daniel Thomas"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Daniel Thomas</h5>
-                <p class="card-text">
-                  Head of Photographers
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#daniel">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          <div class="col-lg-4">
+            <img src="img/C6-OC/Lakshaya X Fidel.png" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          </div>
+          <div class="col-lg-8 my-5">
+            <h6 class="display-6 text-primary">Lakshya & Fidel</h6>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Alina.webp"
-                alt="Alina"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Alina</h5>
-                <p class="card-text">
-                  Head of Media
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alina">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          
+          <div class="col-lg-8 my-5  order-1">
+            <h6 class="display-6 text-primary text-end">Serena & Alfia</h6>
+<div class="text-end">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.</div>
+          </div>
+          <div class="col-lg-4 order-lg-1 ">
+            <img src="img/C6-OC/Serena X Alfia.jpg" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Ifrath.webp"
-                alt="Ifrath"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Ifrath</h5>
-                <p class="card-text">
-                  Secretary of Logistics & Hospitality
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ifrath">About me.</button>
-              </div>
-            </div>
+        <div class="row row-cols-lg-2 row-cols-1 p-2" style="align-items: center;">
+          <div class="col-lg-4">
+            <img src="img/C6-OC/Lakshaya X Fidel.png" alt="Irfaan on the left and Hiba on the right" class="img-fluid" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          </div>
+          <div class="col-lg-8 my-5">
+            <h6 class="display-6 text-primary">Lakshya & Fidel</h6>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius error explicabo ipsam dicta! Molestias dolorem reprehenderit esse! Iure soluta hic sequi aliquam vero incidunt quod doloribus quidem error eligendi perspiciatis beatae repellendus cum eaque recusandae, officia commodi assumenda illum optio. Ratione nihil ipsam, tempore iure voluptas expedita beatae culpa! Neque eius, vel deserunt adipisci laborum similique. Iure sit non possimus ex aut maxime adipisci ipsam! Cupiditate, a nesciunt laboriosam exercitationem sunt quo fugit, maxime nobis, non pariatur ullam beatae molestiae neque unde nisi necessitatibus placeat ducimus repellat fugiat rem. Facere libero ipsam assumenda, porro dolor quae veritatis sit asperiores nobis.
           </div>
         </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Iris.webp"
-                alt="Iris"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Iris George</h5>
-                <p class="card-text">
-                  Secretary of Logistics & Hospitality
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#iris">About me.</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Ryan.webp"
-                alt="Ryan"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Ryan Joseph Abraham</h5>
-                <p class="card-text">
-                  Secretary of Marketing & Public Relations
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ryan">About me.</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Vaani.webp"
-                alt="Vaani"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Vaani Sharma</h5>
-                <p class="card-text">
-                  Secretary of Research & Development
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vaani">About me.</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="team-card hiddenPopIn">
-            <div class="card">
-              <img
-                src="img/C5-OC/Devna.webp"
-                alt="Devna"
-                class="card-img-top team-image img-fluid"
-              />
-              <div class="card-body team-body">
-                <h5 class="card-title">Devna</h5>
-                <p class="card-text">
-                  Secretary of Research & Development
-                </p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#devna" id="teachers">About me.</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-grid">
-        <a
-          href="faculty-advisors/"
-          role="button"
-          type="button"
-          class="btn btn-primary "
-          >Faculty Advisors</a
-        >
-      </div>
-      <div class="d-grid">
-        <a
-          href="older-teams/"
-          role="button"
-          type="button"
-          class="btn btn-primary my-5"
-          >Previous team members</a
-        >
       </div>
     </div>
     <!-- <div class="text-center container">
@@ -1283,7 +1092,7 @@
           </button>
         </div>
       </div>
-    </div> -->
+    </div> 
     <div class="bg-primary text-white container-fluid p-5 text-center footer">
       NewMUN Official Website; Programmed by Athiban Sharon. 
           This website is licensed under the GNU GPL Version 3. License information can be seen <a href="http://newmun.athiban-sharon.com/LICENSE">at LICENSE</a>. Though the license states that you do not need to attribute the original author of this website, it would be nice if you do. You can contact me using <a href="mailto:athibansworkmail@gmail.com">mail</a> or personally on <a href="www.instagram.com/athiban.sharon">Instagram</a>. Acknowledgment to Srevin for starting the NewMUN website idea. Check the sites source code <a href="https://github.com/athshh/newmun_main">on GitHub</a>. Thank you for viewing my website! <br><span><i>- Athiban Sharon</i></span>
