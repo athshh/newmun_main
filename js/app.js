@@ -85,7 +85,7 @@ hiddenPopInElements.forEach((el) => popInObserver.observe(el));
 const countupEls = document.querySelectorAll(".countup");
 countupEls.forEach((el) => countupObserver.observe(el));
 
-var countDownDate = new Date("Oct 27, 2023 08:00:00").getTime();
+var countDownDate = new Date("Sept 27, 2024 08:00:00").getTime();
 var x = setInterval(function () {
   // Get today's date and time
   var now = new Date().getTime();
