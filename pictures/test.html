@@ -24,6 +24,19 @@
             display: block;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover; /* Ensures images cover the space without distortion */
+        }
+
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .masonry-grid {
+                column-count: 1;
+            }
         }
     </style>
 </head>
@@ -36,19 +49,19 @@
 
             // Mock JSON data to simulate fetching image URLs
             const imageUrls = [
-'archive_photos/ApplicationFrameHost_arpK8UBMpi.png',
-'archive_photos/ApplicationFrameHost_oBKzAWZg2e.jpg',
-'archive_photos/athiban.jpg',
-'archive_photos/blue_abstract_lines_2.jpg',
-'archive_photos/DSC_0177.JPG',
-'archive_photos/jumbotron.webp',
-'archive_photos/logo.png',
-'archive_photos/NewMUN-Logo-128px.png',
-'archive_photos/NewMUN-logo-new.png',
-'archive_photos/NewMUN-logo-new_trans.png',
-'archive_photos/NewMUN-logo-new_trans_resize.png',
-'archive_photos/NewMUN-Logo.png',
-'archive_photos/thing'
+                'archive_photos/ApplicationFrameHost_arpK8UBMpi.png',
+                'archive_photos/ApplicationFrameHost_oBKzAWZg2e.jpg',
+                'archive_photos/athiban.jpg',
+                'archive_photos/blue_abstract_lines_2.jpg',
+                'archive_photos/DSC_0177.JPG',
+                'archive_photos/jumbotron.webp',
+                'archive_photos/logo.png',
+                'archive_photos/NewMUN-Logo-128px.png',
+                'archive_photos/NewMUN-logo-new.png',
+                'archive_photos/NewMUN-logo-new_trans.png',
+                'archive_photos/NewMUN-logo-new_trans_resize.png',
+                'archive_photos/NewMUN-Logo.png'
+                // Removed the incomplete URL
             ];
 
             // Function to add images to the gallery
@@ -56,6 +69,7 @@
                 urls.forEach(url => {
                     const img = document.createElement('img');
                     img.src = url;
+                    img.onerror = () => img.style.display = 'none'; // Hide broken images
                     gallery.appendChild(img);
                 });
             }
