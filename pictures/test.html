@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 16px;
+            padding: 16px;
+        }
+
+        .masonry-grid img {
+            width: 100%;
+            margin-bottom: 16px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="gallery" class="masonry-grid"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('gallery');
+
+            // Mock JSON data to simulate fetching image URLs
+            const imageUrls = [
+'archive_photos/ApplicationFrameHost_arpK8UBMpi.png',
+'archive_photos/ApplicationFrameHost_oBKzAWZg2e.jpg',
+'archive_photos/athiban.jpg',
+'archive_photos/blue_abstract_lines_2.jpg',
+'archive_photos/DSC_0177.JPG',
+'archive_photos/jumbotron.webp',
+'archive_photos/logo.png',
+'archive_photos/NewMUN-Logo-128px.png',
+'archive_photos/NewMUN-logo-new.png',
+'archive_photos/NewMUN-logo-new_trans.png',
+'archive_photos/NewMUN-logo-new_trans_resize.png',
+'archive_photos/NewMUN-Logo.png',
+'archive_photos/thing'
+            ];
+
+            // Function to add images to the gallery
+            function addImagesToGallery(urls) {
+                urls.forEach(url => {
+                    const img = document.createElement('img');
+                    img.src = url;
+                    gallery.appendChild(img);
+                });
+            }
+
+            // Call function to add images
+            addImagesToGallery(imageUrls);
+        });
+    </script>
+</body>
+</html>
