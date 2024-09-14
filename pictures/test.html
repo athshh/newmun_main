@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masonry Grid</title>
+    <title>Team and Gallery with Bootstrap Modal</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Custom JS -->
+    <script defer src="/js/app.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
+            margin-top: 30vh; /* Adjust margin-top to account for fixed navbar */
         }
 
         .masonry-grid {
@@ -25,6 +38,17 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             object-fit: cover; /* Ensures images cover the space without distortion */
+            cursor: pointer; /* Change cursor to pointer to indicate clickable */
+            background-color: #e0e0e0; /* Placeholder color while loading */
+            transition: background-color 0.3s ease; /* Smooth transition for placeholder color */
+        }
+
+        .masonry-grid img:loading {
+            background-color: #e0e0e0; /* Placeholder color while image is loading */
+        }
+
+        .masonry-grid img:loaded {
+            background-color: transparent; /* Make background transparent once the image is loaded */
         }
 
         @media (max-width: 1200px) {
@@ -33,49 +57,326 @@
             }
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 600px) {
             .masonry-grid {
                 column-count: 1;
             }
         }
+
+        .modal-dialog {
+            max-width: 90%; /* Adjust modal width to fit the screen */
+        }
+
+        .modal-content {
+            border-radius: 0; /* Remove rounded corners */
+        }
+
+        .modal-body {
+            padding: 0; /* Remove padding */
+            text-align: center; /* Center image horizontally */
+        }
+
+        .modal-body img {
+            max-width: 100%; /* Ensure image fits within the modal */
+            max-height: 80vh; /* Limit image height to 80% of the viewport height */
+            border-radius: 0; /* Remove rounded corners */
+            object-fit: contain; /* Maintain aspect ratio while fitting inside the modal */
+        }
     </style>
 </head>
 <body>
-    <div id="gallery" class="masonry-grid"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand px-lg-5" href="#">
+                <img src="/img/logo.png" alt="NewMUN logo" width="25%" height="25%">
+                <span style="padding-left: 5%; color: #003165; font-family: 'Montserrat', sans-serif;">NewMUN</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarID">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <div class="container-fluid">
+                    <style>
+                        @media screen and (max-width: 992px) {
+                            .nav-item {
+                                align-self: center;
+                            }
+                        }
+                    </style>
+                    <ul class="navbar-nav flex-navbar flex-lg-row-reverse flex-none-column-reverse" style="font-family: 'Montserrat'">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Pictures</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Team</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link btn dropdown-toggle" aria-current="page" href="/index.html/#resources" style="font-weight: 400" role="button" data-bs-toggle="dropdown">Resources</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/index.html/#resources-general" class="dropdown-item">General resources</a></li>
+                                <li><a href="/index.html/#resources-council" class="dropdown-item">Council resources</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html/#why">Why NewMUN?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html/#what">What is NewMUN?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <script>
+    <!-- Content -->
+    <div class="container mt-4">
+        <div id="gallery" class="masonry-grid"></div>
+    </div>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="Large View" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             const gallery = document.getElementById('gallery');
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            const modalImg = document.getElementById('modalImage');
 
-            // Mock JSON data to simulate fetching image URLs
+            // New image URLs
             const imageUrls = [
                 'archive_photos/ApplicationFrameHost_arpK8UBMpi.png',
                 'archive_photos/ApplicationFrameHost_oBKzAWZg2e.jpg',
                 'archive_photos/athiban.jpg',
                 'archive_photos/blue_abstract_lines_2.jpg',
                 'archive_photos/DSC_0177.JPG',
+                'archive_photos/IMG_0733.jpg',
+                'archive_photos/IMG_0737.jpg',
+                'archive_photos/IMG_0739.jpg',
+                'archive_photos/IMG_0740.jpg',
+                'archive_photos/IMG_0741.jpg',
+                'archive_photos/IMG_0743.jpg',
+                'archive_photos/IMG_0745.jpg',
+                'archive_photos/IMG_0747.jpg',
+                'archive_photos/IMG_0749.jpg',
+                'archive_photos/IMG_0759.jpg',
+                'archive_photos/IMG_0760.jpg',
+                'archive_photos/IMG_0761.jpg',
+                'archive_photos/IMG_0767 copy.jpg',
+                'archive_photos/IMG_0768 copy.jpg',
+                'archive_photos/IMG_0772.jpg',
+                'archive_photos/IMG_0778.jpg',
+                'archive_photos/IMG_0795.jpg',
+                'archive_photos/IMG_0800.jpg',
+                'archive_photos/IMG_0804.jpg',
+                'archive_photos/IMG_0814.jpg',
+                'archive_photos/IMG_0817.jpg',
+                'archive_photos/IMG_0820.jpg',
+                'archive_photos/IMG_0844.jpg',
+                'archive_photos/IMG_0846.jpg',
+                'archive_photos/IMG_0847.jpg',
+                'archive_photos/IMG_0851.jpg',
+                'archive_photos/IMG_0860.jpg',
+                'archive_photos/IMG_0866.jpg',
+                'archive_photos/IMG_0868.jpg',
+                'archive_photos/IMG_0974.jpg',
+                'archive_photos/IMG_0982.jpg',
+                'archive_photos/IMG_0986.jpg',
+                'archive_photos/IMG_0987.jpg',
+                'archive_photos/IMG_0990.jpg',
+                'archive_photos/IMG_0995.jpg',
+                'archive_photos/IMG_0996.jpg',
+                'archive_photos/IMG_0997.jpg',
+                'archive_photos/IMG_0998.jpg',
+                'archive_photos/IMG_0999.jpg',
+                'archive_photos/IMG_1003.jpg',
+                'archive_photos/IMG_1009.jpg',
+                'archive_photos/IMG_1011.jpg',
+                'archive_photos/IMG_1014.jpg',
+                'archive_photos/IMG_1016.jpg',
+                'archive_photos/IMG_1026.jpg',
+                'archive_photos/IMG_1036.jpg',
+                'archive_photos/IMG_1042.jpg',
+                'archive_photos/IMG_1062.jpg',
+                'archive_photos/IMG_1067.jpg',
+                'archive_photos/IMG_1089.jpg',
+                'archive_photos/IMG_1092.jpg',
+                'archive_photos/IMG_1093.jpg',
+                'archive_photos/IMG_1107.jpg',
+                'archive_photos/IMG_1114.jpg',
+                'archive_photos/IMG_1117.jpg',
+                'archive_photos/IMG_1120.jpg',
+                'archive_photos/IMG_1142.jpg',
+                'archive_photos/IMG_1161.jpg',
+                'archive_photos/IMG_1166.jpg',
+                'archive_photos/IMG_1169.jpg',
+                'archive_photos/IMG_1191.jpg',
+                'archive_photos/IMG_1220.jpg',
+                'archive_photos/IMG_1221.jpg',
+                'archive_photos/IMG_1272.jpg',
+                'archive_photos/IMG_1274.jpg',
+                'archive_photos/IMG_1275.jpg',
+                'archive_photos/IMG_1276.jpg',
+                'archive_photos/IMG_1277.jpg',
+                'archive_photos/IMG_1278.jpg',
+                'archive_photos/IMG_1279.jpg',
+                'archive_photos/IMG_1280.jpg',
+                'archive_photos/IMG_1281.jpg',
+                'archive_photos/IMG_1282.jpg',
+                'archive_photos/IMG_1284.jpg',
+                'archive_photos/IMG_1285.jpg',
+                'archive_photos/IMG_1286.jpg',
+                'archive_photos/IMG_1291.jpg',
+                'archive_photos/IMG_1292.jpg',
+                'archive_photos/IMG_1293.jpg',
+                'archive_photos/IMG_1294.jpg',
+                'archive_photos/IMG_1295.jpg',
+                'archive_photos/IMG_1296.jpg',
+                'archive_photos/IMG_1297.jpg',
+                'archive_photos/IMG_1298.jpg',
+                'archive_photos/IMG_1299.jpg',
+                'archive_photos/IMG_1300.jpg',
+                'archive_photos/IMG_1301.jpg',
+                'archive_photos/IMG_1302.jpg',
+                'archive_photos/IMG_1303.jpg',
+                'archive_photos/IMG_1304.jpg',
+                'archive_photos/IMG_1305.jpg',
+                'archive_photos/IMG_1307.jpg',
+                'archive_photos/IMG_1308.jpg',
+                'archive_photos/IMG_1309.jpg',
+                'archive_photos/IMG_1310.jpg',
+                'archive_photos/IMG_1311.jpg',
+                'archive_photos/IMG_1312.jpg',
+                'archive_photos/IMG_1313.jpg',
+                'archive_photos/IMG_1314.jpg',
+                'archive_photos/IMG_1315.jpg',
+                'archive_photos/IMG_1316.jpg',
+                'archive_photos/IMG_1317.jpg',
+                'archive_photos/IMG_1318.jpg',
+                'archive_photos/IMG_1319.jpg',
+                'archive_photos/IMG_1320.jpg',
+                'archive_photos/IMG_1321.jpg',
+                'archive_photos/IMG_1324.jpg',
+                'archive_photos/IMG_1325.jpg',
+                'archive_photos/IMG_1327.jpg',
+                'archive_photos/IMG_1328.jpg',
+                'archive_photos/IMG_1329.jpg',
+                'archive_photos/IMG_1330.jpg',
+                'archive_photos/IMG_1331.jpg',
+                'archive_photos/IMG_1332.jpg',
+                'archive_photos/IMG_1333.jpg',
+                'archive_photos/IMG_1334.jpg',
+                'archive_photos/IMG_1335.jpg',
+                'archive_photos/IMG_1336.jpg',
+                'archive_photos/IMG_1337.jpg',
+                'archive_photos/IMG_1338.jpg',
+                'archive_photos/IMG_1341.jpg',
+                'archive_photos/IMG_1348.jpg',
+                'archive_photos/IMG_1349.jpg',
+                'archive_photos/IMG_1350.jpg',
+                'archive_photos/IMG_1352.jpg',
+                'archive_photos/IMG_1353.jpg',
+                'archive_photos/IMG_1354.jpg',
+                'archive_photos/IMG_1355.jpg',
+                'archive_photos/IMG_1356.jpg',
+                'archive_photos/IMG_1357.jpg',
+                'archive_photos/IMG_1358.jpg',
+                'archive_photos/IMG_1359.jpg',
+                'archive_photos/IMG_1381.jpg',
+                'archive_photos/IMG_1398.jpg',
+                'archive_photos/IMG_1432.jpg',
+                'archive_photos/IMG_1598.jpg',
+                'archive_photos/IMG_1624.jpg',
+                'archive_photos/IMG_1635.jpg',
+                'archive_photos/IMG_1636.jpg',
+                'archive_photos/IMG_1640.jpg',
+                'archive_photos/IMG_1641.jpg',
+                'archive_photos/IMG_1645.jpg',
+                'archive_photos/IMG_1740.jpg',
+                'archive_photos/IMG_1742.jpg',
+                'archive_photos/IMG_1780.jpg',
+                'archive_photos/IMG_1796.jpg',
+                'archive_photos/IMG_1799.jpg',
+                'archive_photos/IMG_1819.jpg',
+                'archive_photos/IMG_1828.jpg',
+                'archive_photos/IMG_1832.jpg',
+                'archive_photos/IMG_1835.jpg',
+                'archive_photos/IMG_1845.jpg',
+                'archive_photos/IMG_1848.jpg',
+                'archive_photos/IMG_1852.jpg',
+                'archive_photos/IMG_1867.jpg',
+                'archive_photos/IMG_1873.jpg',
+                'archive_photos/IMG_1876.jpg',
+                'archive_photos/IMG_1878.jpg',
+                'archive_photos/IMG_1879.jpg',
+                'archive_photos/IMG_8228.jpg',
+                'archive_photos/IMG_8231.jpg',
+                'archive_photos/IMG_8232.jpg',
+                'archive_photos/IMG_8233.jpg',
+                'archive_photos/IMG_8234.jpg',
+                'archive_photos/IMG_8240.jpg',
+                'archive_photos/IMG_8248.jpg',
+                'archive_photos/IMG_8254.jpg',
+                'archive_photos/IMG_8274.jpg',
+                'archive_photos/IMG_8318.jpg',
+                'archive_photos/IMG_8345.jpg',
+                'archive_photos/IMG_8367.jpg',
                 'archive_photos/jumbotron.webp',
                 'archive_photos/logo.png',
+                'archive_photos/_MG_0769.jpg',
+                'archive_photos/_MG_0790.jpg',
+                'archive_photos/_MG_0825.jpg',
+                'archive_photos/_MG_0834.jpg',
+                'archive_photos/_MG_1698.jpg',
+                'archive_photos/_MG_1700.jpg',
+                'archive_photos/_MG_1703.jpg',
                 'archive_photos/NewMUN-Logo-128px.png',
                 'archive_photos/NewMUN-logo-new.png',
                 'archive_photos/NewMUN-logo-new_trans.png',
                 'archive_photos/NewMUN-logo-new_trans_resize.png',
                 'archive_photos/NewMUN-Logo.png'
-                // Removed the incomplete URL
             ];
 
-            // Function to add images to the gallery
-            function addImagesToGallery(urls) {
-                urls.forEach(url => {
-                    const img = document.createElement('img');
-                    img.src = url;
-                    img.onerror = () => img.style.display = 'none'; // Hide broken images
-                    gallery.appendChild(img);
-                });
-            }
+            const firstSixUrls = imageUrls.slice(0, 6);
+            const remainingUrls = imageUrls.slice(6);
 
-            // Call function to add images
-            addImagesToGallery(imageUrls);
+            // Add first six images directly
+            firstSixUrls.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.classList.add('lazy-load');
+                gallery.appendChild(img);
+            });
+
+            // Add remaining images with lazy loading
+            remainingUrls.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                img.classList.add('lazy-load');
+                img.dataset.src = url;
+                img.setAttribute('loading', 'lazy'); // Browser native lazy loading
+                img.addEventListener('click', () => {
+                    modalImg.src = url;
+                    modal.show();
+                });
+                gallery.appendChild(img);
+            });
+
+            // JavaScript to handle placeholder color while loading
+            document.querySelectorAll('.lazy-load').forEach(img => {
+                img.onload = () => img.style.backgroundColor = 'transparent';
+                img.onerror = () => img.style.backgroundColor = '#f0f0f0'; // Fallback color for errors
+            });
         });
     </script>
 </body>
